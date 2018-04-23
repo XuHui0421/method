@@ -29,7 +29,24 @@ function returnFloat(value){
   }
 }
 
-//数组中移除某个元素
+//判断是否为空
+function emptyFun(obj){
+     var obj=obj;
+     if(obj==""||obj==null||obj==undefined||obj=="null"||obj=="undefined"){
+         return true;
+     }else{
+         return false;
+     }
+ }
+
+//校验是否全由数字组成 
+function isDigit(s) { 
+     var patrn=/^[0-9]{1,20}$/; 
+     if (!patrn.exec(s)) return false 
+     return true 
+ } 
+
+ //数组中移除某个元素
 Array.prototype.remove = function(obj){
   for(var i =0;i <this.length;i++){
     var temp = this[i];
@@ -44,3 +61,20 @@ Array.prototype.remove = function(obj){
     }
   }
 }
+//数组去重
+ Array.prototype.unique1 = function(){
+     var res = [this[0]];
+     for(var i = 1; i < this.length; i++){
+         var repeat = false;
+         for(var j = 0; j < res.length; j++){
+             if(this[i] == res[j]){
+                 repeat = true;
+                 break;
+             }
+         }
+         if(!repeat){
+             res.push(this[i]);
+         }
+     }
+     return res;
+ }
