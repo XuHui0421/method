@@ -82,11 +82,11 @@ Array.prototype.remove = function(obj){
  //图片地址转base64
 var url="https://y.zdmimg.com/files/b12985a3c8ca4ed0390c653b76108bfa.jpg";
 getBase64(url)
-    .then(function(base64){
-            console.log(base64);//处理成功打印在控制台
-    },function(err){
-            console.log(err);//打印异常信息
-    });   
+.then(function(base64){
+    console.log(base64);//处理成功打印在控制台
+},function(err){
+    console.log(err);//打印异常信息
+});   
   //传入图片路径，返回base64
 function getBase64(img){
   function getBase64Image(img,width,height) {//width、height调用时传入具体像素值，控制大小 ,不传则默认图像大小
